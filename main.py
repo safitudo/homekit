@@ -1,7 +1,13 @@
+import time
 import json
 import requests
 import serial
-ser = serial.Serial('/dev/tty.usbmodem1411', 9600)
+
+time.sleep(10)
+
+print("Starting program")
+
+ser = serial.Serial('/dev/ttyACM0', 9600)
 r = requests.get('http://192.168.0.2/api/3LvqZztMKdWDKQUGOLzrdTZdhiqQHNR80CVkPP9K/lights')
 # print r.json()
 lights = r.json()
